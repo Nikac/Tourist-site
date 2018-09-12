@@ -1,0 +1,117 @@
+.popup {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba($color-black, 0.8);
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s;
+
+
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 75%;
+		height: 50%;
+		transform: translate(-50%, -50%) scale(0.25);
+		margin: 0 auto;
+		background-color: $color-white;
+		border-radius: 3px;
+		overflow: hidden;
+		display: table;
+		transition: all .5s;
+
+		@include respond(tab-land) {
+			width: 70%;
+			height: 45%;
+		}
+
+		@include respond(tab-port) {
+			width: 80%;
+			height: 55%;
+			padding: 2rem;
+		}
+	}
+
+	&__images-box {
+		display: table-cell;
+		width: 33.333333%;
+		height: auto;
+
+		@include respond(tab-land) {
+			width: 43.333333%;;
+		}
+
+		@include respond(tab-port) {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&__img {
+		width:100%;
+		display: block;
+
+		@include respond(tab-port) {
+			float: left;
+			width: 50%;
+
+		}
+	}
+
+	&__text-box {
+		display: table-cell;
+		width: 66.6666667%;
+		width: 59%;
+		vertical-align: middle;
+		padding: 3rem 5rem;
+
+		@include respond(tab-land) {
+			width: 56.333333%;
+			padding: 1rem 2rem;
+		}
+
+		@include respond(tab-port) {
+			width: 100%;
+			display: block;
+		}
+	}
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__close {
+
+		&:link,
+		&:visited {
+			position: absolute;
+			top: 3rem;
+			right: 3rem;
+			font-size: 3rem;
+			color: $color-black;
+			display: inline-block;
+			text-decoration: none;
+			transition: all 0.2s;
+
+				@include respond(tab-land) {
+					top: .5rem;
+					right: 2rem;
+					color: $color-primary-dark;
+				}
+		}
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+
+	&:target &__content {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}

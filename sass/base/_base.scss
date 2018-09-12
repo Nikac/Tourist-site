@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	width: 100%;
+	overflow-x: hidden; 
+	font-size: 62.5%; // must be in precentage for people can change a font size if they zoom   divide  = 100%16 beacuse 16px is default font size of browser
+
+	@include respond(phone) {
+			font-size: 30%;
+	}
+
+	@include respond(tab-port) {
+			font-size: 40%;
+	}
+
+	@include respond(tab-land) {
+			font-size: 50%;
+	}
+
+	@include respond(destkop) {
+			font-size: 75%;
+	}
+}
+
+
+body {
+	box-sizing: border-box;
+}
