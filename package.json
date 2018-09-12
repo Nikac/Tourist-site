@@ -15,5 +15,8 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.1",
     "node-sass": "^4.9.2"
+  },
+  "dependencies": {
+    "hoek": "^5.0.4"
   }
 }
